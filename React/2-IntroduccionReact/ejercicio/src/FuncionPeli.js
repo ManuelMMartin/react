@@ -3,7 +3,7 @@ function Peli(array) {
       <div class="flip-card">
          <div class="flip-card-inner">
             <div class="flip-card-front">
-               <img src={array.cartel} class="img" alt="" />
+               <img src={array.cartel} class="img" alt={array.titulo+" image"}/>
             </div>
             <div class="flip-card-back">
                <h3>{array.titulo}</h3>

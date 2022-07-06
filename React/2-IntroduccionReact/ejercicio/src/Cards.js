@@ -1,7 +1,7 @@
-import videoclub from ".";
+import videoclub from "./index";
 import Peli from "./FuncionPeli";
 function Cards() {
-   videoclub.peliculas.map((array) => {
+   return videoclub.peliculas.map((array) => {
       return (Peli(array))
    })
 }
