@@ -4,4 +4,3 @@ function longitud (arg1){
 
 module.exports=longitud
 
-console.log(module)

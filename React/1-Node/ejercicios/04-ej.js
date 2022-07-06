@@ -1,3 +1,3 @@
 let datos = require("./02-ej")
 
-console.log(datos.objeto, "del ejercicio 4")
+console.log(datos.nombre,datos.edad, "del ejercicio 4")

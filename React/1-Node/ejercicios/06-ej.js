@@ -1,11 +1,7 @@
+let factorial = require("./funciones/06-funciones")
+let supervillains = require("supervillains")
 
-let aleatorio = parseInt(Math.random()*20+1)
-
-let villano = require("supervillains")
-
-//for (let i = 0; i < 4; i++) {
-   
-   
-//}
-
-
+let miarray = Array.from({length: 4}, () => parseInt(Math.random() * 5 + 1))
+miarray.forEach(function(item){
+   console.log(supervillains.all[factorial(item)]);
+})
