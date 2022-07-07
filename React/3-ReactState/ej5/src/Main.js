@@ -41,13 +41,8 @@ function Main(props) {
    return <main>{props.libros.map((libro, index) => {
       
       return (<Tarjeta
-         titulo={libro.title}
-         imagen={libro.formats["image/jpeg"]}
-         autor={libro.authors.map((autor) => (autor.name))}
-         id={libro.id}
-         genero={libro.subjects[index]}
-         descargas={libro.download_count}
-         lenguages={libro.languages} />
+         key={libro.id}
+         {...libro} />
       )
    })}</main>
 }
