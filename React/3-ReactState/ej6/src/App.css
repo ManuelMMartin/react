@@ -1,0 +1,36 @@
+.button {
+  display: inline-block;
+  height: 150px;
+  width: 150px;
+  padding: 15px 25px;
+  font-size: 75px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  background-color: #4CAF50;
+  border-bottom: 1px solid;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  margin: 10px;
+}
+
+.button:hover {
+  background-color: #3e8e41
+}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.grid {
+  display: grid;
+  grid-gap: 32px;
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+  width: fit-content;
+}

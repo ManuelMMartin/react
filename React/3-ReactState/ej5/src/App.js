@@ -8,8 +8,8 @@ import Main from './Main';
 function App() {
   return (<>
     <Cabecera />
-    <div className='grid--3-cols grid'>
-      <Main libros={biblioteca.libros}/>
+    <div className='container grid'>
+      <Main className='grid--3-cols grid' libros={biblioteca.libros}/>
     </div>
 
   </>);
