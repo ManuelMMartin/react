@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  height: 30px;
+  align-items: center;
+  margin: 10px;
+}
+
+p {
+  margin: 5px;
+}
