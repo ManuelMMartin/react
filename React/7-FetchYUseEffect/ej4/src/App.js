@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
 import './App.css';
 
+//components
+import Cabecera from './components/Cabecera';
+
 function App() {
 
   let [data, setData] = useState([])
@@ -19,47 +22,47 @@ function App() {
   }, [])
 
   useEffect(() => {
+    let puente = []
+    console.log(data2)
     setLoading(true)
-    fetch(`https://api.magicthegathering.io/v1/cards?set=${select}`)
+    fetch(`https://api.magicthegathering.io/v1/cards?set=${select != "" ? select : "undefined"}`)
       .then(res => res.json())
       .then(function (datos) {
-        setData2(datos)
+        (datos.cards.map((cartas) => { puente.push(cartas) }))
         setLoading(false)
+        setData2(puente)
       })
   }, [select])
 
   if (loading) {
-    
+
     return (<>
-    <header>
-        <img className='logo' src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Magicthegathering-logo.svg/1280px-Magicthegathering-logo.svg.png'/>
-      </header>
-    <h1>Cargando...</h1>
-    
+      <Cabecera />
+      <h1>Cargando...</h1>
+
     </>)
-    
+
   } else {
 
     return (<>
-      <header>
-        <img className='logo' src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Magicthegathering-logo.svg/1280px-Magicthegathering-logo.svg.png'/>
-      </header>
+      <Cabecera />
 
       <select className='select' onChange={(e) => (setSelect(e.target.value))}>
-        <option value="" selected >Selecciona un Set</option>
+        <option selected >Selecciona un Set</option>
         {data.map((set, index) => {
-          return <option value={set.code} key={index}>{set.name}</option>
+          return <option id={set.name} value={set.code} key={index}>{set.name}</option>
         })}
       </select>
+
       <div>
         <div className='grid container'>
-          {data2.cards.map((carta, index) => {
+          {data2.map((carta, index) => {
             return (<>
-            <div className='card'>
-            <h2 key={index}>{carta.name}</h2>
-            {carta.imageUrl?<img src={carta.imageUrl} alt={carta.name}/>: <img src="https://wikiimg.tojsiabtv.com/wikipedia/en/thumb/a/aa/Magic_the_gathering-card_back.jpg/440px-Magic_the_gathering-card_back.jpg" alt={carta.name}/> }
-            <p>{carta.text}</p>
-            </div>
+              <div key={index} className='card'>
+                <h2 >{carta.name}</h2>
+                {carta.imageUrl ? <img src={carta.imageUrl} alt={carta.name} /> : <img src="https://wikiimg.tojsiabtv.com/wikipedia/en/thumb/a/aa/Magic_the_gathering-card_back.jpg/440px-Magic_the_gathering-card_back.jpg" alt={carta.name} />}
+                <p>{carta.text}</p>
+              </div>
             </>)
           })}
         </div>
