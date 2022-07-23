@@ -1,0 +1,61 @@
+.card {
+   /* Add shadows to create the "card" effect */
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.39);
+   transition: 0.3s;
+   background-color: rgba(10, 124, 88, 0.24); 
+   border-radius: 20px;  
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   color: #ffffff;
+}
+
+/* On mouse-over, add a deeper shadow */
+img:hover {
+   transform: scale(1.1, 1.1);
+   transition: 0.7s;
+}
+
+img {
+   height: 400px;
+   margin: 20px;
+   border-radius: 20px;
+
+}
+
+.grid {
+   display: grid;
+   grid-gap: 32px;
+   grid-template-columns: repeat(4, 1fr);
+   padding: 2px 16px;
+
+}
+
+p {
+   margin: 20px;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.logo {
+   height: 150px;
+}
+.logo:hover {
+   transform: rotate(0deg);
+}
+
+header {
+   display: flex;
+   justify-content: center;
+}
+
+body {
+   background-color: darkslategrey;
+}
+
+select {
+   margin: 30px;
+}
+
+h2{
+
+}
